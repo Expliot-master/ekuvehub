@@ -19,7 +19,7 @@ export function CreditsSection() {
                   <div className="absolute -inset-1 bg-primary/30 rounded-full blur-md" />
                   <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary">
                     <Image
-                      src="/images/ekuve-profile.jpg"
+                      src="https://i.ibb.co/wNdqFCLt/ba3b6954a99f935aff18e4932fd8b6ea.png"
                       alt="ekuve profile"
                       fill
                       className="object-cover"
@@ -44,7 +44,7 @@ export function CreditsSection() {
                   <div className="absolute -inset-1 bg-primary/30 rounded-full blur-md" />
                   <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary">
                     <Image
-                      src="/images/hexa-profile.jpg"
+                      src="https://i.ibb.co/1JsqyMqs/5f490279beac66bc763ec64012d55c7e-1.webp"
                       alt="Hexa profile"
                       fill
                       className="object-cover"

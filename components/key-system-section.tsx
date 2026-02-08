@@ -95,7 +95,7 @@ export function KeySystemSection() {
   );
 }
 
-const SCRIPT_CODE = `loadstring(game:HttpGet("https://raw.githubusercontent.com/ekuvescripthub/ekuvehub/main/loader.lua"))()`;
+const SCRIPT_CODE = `loadstring(game:HttpGet("https://raw.githubusercontent.com/ekuve/ekuvehub/main/main.lua"))()`;
 
 function CopyScriptBlock() {
   const [copied, setCopied] = useState(false);
