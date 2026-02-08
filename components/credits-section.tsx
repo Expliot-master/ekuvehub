@@ -5,16 +5,16 @@ import { TiltCard } from "@/components/ui/tilt-card";
 
 const teamMembers = [
   {
-    name: "ekuve",
-    role: "Developer / Owner",
-    image:
-      "https://i.ibb.co/wNdqFCLt/ba3b6954a99f935aff18e4932fd8b6ea.png",
-  },
-  {
     name: "wr4o",
     role: "Co-Owner / Community Manager",
     image:
       "https://i.ibb.co/TqTB4RFw/a8db4d9031f15077a0cdf1360118a7bb.png",
+  },
+  {
+    name: "ekuve",
+    role: "Developer / Owner",
+    image:
+      "https://i.ibb.co/wNdqFCLt/ba3b6954a99f935aff18e4932fd8b6ea.png",
   },
   {
     name: "Hexa",
