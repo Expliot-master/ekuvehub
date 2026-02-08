@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 const paymentMethods = {
-  direct: ["PayPal (F&F)", "Cash App", "Venmo (F&F)"],
+  direct: ["PayPal (F&F)", "Cash App"],
   crypto: ["LTC", "BTC"],
 };
 
