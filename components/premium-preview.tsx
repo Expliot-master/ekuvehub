@@ -89,7 +89,7 @@ export function PremiumPreview() {
           <div className="flex items-center justify-between bg-[#1a1a2e] px-4 py-3 border-b border-yellow-500/20">
             <div className="flex items-center gap-3">
               <Image
-                src="/images/ekuve-profile.webp"
+                src="/images/ekuve-profile.jpg"
                 alt="Ekuve Hub"
                 width={24}
                 height={24}
@@ -167,7 +167,7 @@ export function PremiumPreview() {
                 <div className="p-3 border-t border-border/30">
                   <div className="flex items-center gap-2">
                     <Image
-                      src="/images/ekuve-profile.webp"
+                      src="/images/ekuve-profile.jpg"
                       alt="ekuvescripthub"
                       width={36}
                       height={36}

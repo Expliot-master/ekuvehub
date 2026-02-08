@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { TiltCard } from "@/components/ui/tilt-card";
-import { Clock, Key, ExternalLink, Play } from "lucide-react";
+import { Clock, Key, ExternalLink, Play, Copy, Check, Terminal } from "lucide-react";
 
 const keyOptions = [
   {
@@ -87,7 +88,82 @@ export function KeySystemSection() {
             If the tab does not open, please disable your adblocker and try again.
           </p>
         </div>
+
+        <CopyScriptBlock />
       </div>
     </section>
+  );
+}
+
+const SCRIPT_CODE = `loadstring(game:HttpGet("https://raw.githubusercontent.com/ekuvescripthub/ekuvehub/main/loader.lua"))()`;
+
+function CopyScriptBlock() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(SCRIPT_CODE);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // fallback
+      const textarea = document.createElement("textarea");
+      textarea.value = SCRIPT_CODE;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  return (
+    <div className="mt-12 max-w-2xl mx-auto">
+      <div className="text-center mb-4">
+        <h3 className="text-xl font-bold text-foreground">
+          <Terminal className="inline-block w-5 h-5 mr-2 text-primary" />
+          Copy & paste this script into your Roblox executor
+        </h3>
+      </div>
+
+      <div className="relative group">
+        <div className="absolute -inset-0.5 bg-primary/20 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="relative bg-card border border-border rounded-xl overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-2 bg-secondary/50 border-b border-border">
+            <span className="text-xs font-mono text-muted-foreground">Lua Script</span>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-destructive/60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+            </div>
+          </div>
+          <div className="p-4">
+            <pre className="text-sm font-mono text-foreground/90 whitespace-pre-wrap break-all select-all">
+              {SCRIPT_CODE}
+            </pre>
+          </div>
+          <div className="px-4 pb-4">
+            <Button
+              onClick={handleCopy}
+              className="w-full gap-2"
+              variant={copied ? "outline" : "default"}
+            >
+              {copied ? (
+                <>
+                  <Check className="w-4 h-4" />
+                  Copied to Clipboard!
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4" />
+                  Copy Script
+                </>
+              )}
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
